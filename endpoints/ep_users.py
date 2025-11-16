@@ -20,8 +20,7 @@ def mdb_all_users():
 
 @app.post("/mdbcreatenewuser")
 def mdb_create_new_user():
-    user = request.form
-    # users = mdb_insert_user(user)
-    print(user)
-    # return {"users" : users, "message" : "All users stored in main database"}
-    return "test"
+    user = {"user_username" : request.form.get("user_username"), "user_password" : request.form.get("user_password"), "user_email": request.form.get("user_email"), "user_state" : "pending", "user_role_id" : 0}
+    user = mdb_insert_user(user)
+
+    return {"users" : user, "message" : "All users stored in main database"}

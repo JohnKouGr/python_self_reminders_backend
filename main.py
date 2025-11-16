@@ -14,7 +14,7 @@ __flaskPort = FLASK_PORT
 __flaskDebug = FLASK_DEBUG 
 
 #if __name__ == '__main__':
-app.run(host=__flaskHost, port=__flaskPort, debug=__flaskDebug)
+app.run(host=__flaskHost, port=__flaskPort, debug=__flaskDebug) # type: ignore
 
 
 
