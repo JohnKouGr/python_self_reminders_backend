@@ -1,6 +1,6 @@
 # package imports
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String, Boolean
+from sqlalchemy import Column, Integer, String
 
 __base = declarative_base()
 
@@ -16,9 +16,4 @@ class User(__base):
     user_state = Column(String) # active, inactive, pending
 
     def __repr__(self) -> str:
-        return f'("user_id: {self.user_id}", user_username: "{self.user_username}", user_password: "{self.user_password}", user_role_id: "{self.user_role_id}", user_email: "{self.user_email}", user_state: "{self.user_state}")'
-
-
-
-
-
+        return str({'user_id' : self.user_id, 'user_username' : self.user_username, 'user_password': self.user_password, 'user_role.id' : self.user_role_id, 'user_email' : self.user_email, 'user_state' : self.user_state})
